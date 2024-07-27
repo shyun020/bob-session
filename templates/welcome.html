@@ -1,0 +1,28 @@
+<!-- welcome.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Your Session KEY</br></br>{{ username }}</h2>
+        <h2>Your Session VALUE</br></br>{{ session_id }}</h2>
+
+        <form id="logout-form" action="{{ url_for('logout') }}" method="POST">
+            <input type="hidden" name="username" value="{{ username }}">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+
+    <script>
+        var username  = "{{ username }}";
+        var session_id = "{{ session_id }}";
+        if (username, session_id) {
+            sessionStorage.setItem(username, session_id);
+        }
+    </script>
+</body>
+</html>
