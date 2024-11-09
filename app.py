@@ -106,7 +106,7 @@ def logout():
     cookie_response = make_response(render_template('login.html'))
     cookie_response.delete_cookie('session_id')
     return cookie_response
-#123
+    
 # Flask 애플리케이션을 실행
 if __name__ == '__main__':
     app.run(debug=True)
